@@ -1,0 +1,33 @@
+{
+  "name": "cuforia",
+  "version": "0.0.1",
+  "description": "Vuforia Wrapper for Cordova",
+  "cordova": {
+    "id": "cordova-plugin-cuforia",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/theoxuan/cordova-plugin-cuforia.git"
+  },
+  "keywords": [
+    "cordova",
+    "vuforia",    
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows",
+    "image",
+    "recognition"
+  ],
+  "author": "Sean Cheung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theoxuan/cordova-plugin-cuforia/issues"
+  },
+  "homepage": "https://github.com/theoxuan/cordova-plugin-cuforia#readme"
+}

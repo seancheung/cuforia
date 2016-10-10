@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-cuforia" version="0.0.1" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Cuforia</name>
+    <description>Cordova Vuforia Plugin</description>
+    <js-module name="CuforiaPlugin" src="www/CuforiaPlugin.js">
+        <clobbers target="navigator.CuforiaPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CuforiaPlugin">
+                <param name="android-package" value="com.seanzx.cuforia.CuforiaPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        <!-- Source Files -->
+        <source-file src="src/android/CuforiaPlugin.java" target-dir="src/com/seanzx/cuforia" />
+        <source-file src="src/android/export/ApplicationControl.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/ApplicationException.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/ApplicationSession.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/CloudReco.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/CylinderTargets.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/FrameMarkers.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/ImageTargets.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/MultiTargets.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/ObjectTargets.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/TextReco.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/UserDefinedTargets.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/VirtualButtons.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/VuMark.java" target-dir="src/com/seanzx/cuforia/export" />
+        <!-- Libraries -->
+        <source-file src="src/android/lib/armeabi-v7a/libVuforia.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/java/vuforia/Vuforia.jar" target-dir="libs" />       
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="CuforiaPlugin">
+                <param name="ios-package" value="CuforiaPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/CuforiaPlugin.m" />
+        <!-- Frameworks -->
+        <framework src="AVFoundation.framework" weak="true" />
+        <framework src="CoreGraphics.framework" weak="true" />
+        <framework src="CoreMedia.framework" weak="true" />
+        <framework src="CoreMotion.framework" weak="true" />
+        <framework src="CoreVideo.framework" weak="true" />
+        <framework src="Foundation.framework" weak="true" />
+        <framework src="OpenGLES.framework" weak="true" />
+        <framework src="QuartzCore.framework" weak="true" />
+        <framework src="Security.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="UIKit.framework" weak="true" />
+        <source-file src="src/ios/lib/arm/libVuforia.a" target-dir="libs" framework="true" />
+        <!-- Hooks -->
+        <hook type="after_plugin_install" src="hooks/AfterPluginInstall.js" />
+        <hook type="before_plugin_uninstall" src="hooks/BeforePluginUninstall.js" />
+        <!-- Add a value to our Info.plist file for iOS 10+ security permissions -->
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>To scan for images.</string>
+        </config-file>
+    </platform>
+    <platform name="windows">
+        <js-module name="CuforiaPlugin" src="src/windows/CuforiaPlugin.js">
+            <runs target="" />
+        </js-module>
+        <!-- Libraries -->
+        <source-file src="src/windows/lib/x86/Vuforia.dll" target-dir="libs/x86" />
+        <!--<source-file src="src/windows/lib/x86/Vuforia.lib" target-dir="libs/x86" />-->
+        <source-file src="src/windows/lib/x64/Vuforia.dll" target-dir="libs/x64" />
+        <!--<source-file src="src/windows/lib/x64/Vuforia.lib" target-dir="libs/x64" />-->
+    </platform>
+</plugin>
