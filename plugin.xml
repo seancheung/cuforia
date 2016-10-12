@@ -21,7 +21,7 @@
         </config-file>
         <!-- Source Files -->
         <source-file src="src/android/CuforiaPlugin.java" target-dir="src/com/seanzx/cuforia" />
-        <source-file src="src/android/export/ApplicationControl.java" target-dir="src/com/seanzx/cuforia/export" />
+        <!--<source-file src="src/android/export/ApplicationControl.java" target-dir="src/com/seanzx/cuforia/export" />
         <source-file src="src/android/export/ApplicationException.java" target-dir="src/com/seanzx/cuforia/export" />
         <source-file src="src/android/export/ApplicationSession.java" target-dir="src/com/seanzx/cuforia/export" />
         <source-file src="src/android/export/CloudReco.java" target-dir="src/com/seanzx/cuforia/export" />
@@ -33,7 +33,7 @@
         <source-file src="src/android/export/TextReco.java" target-dir="src/com/seanzx/cuforia/export" />
         <source-file src="src/android/export/UserDefinedTargets.java" target-dir="src/com/seanzx/cuforia/export" />
         <source-file src="src/android/export/VirtualButtons.java" target-dir="src/com/seanzx/cuforia/export" />
-        <source-file src="src/android/export/VuMark.java" target-dir="src/com/seanzx/cuforia/export" />
+        <source-file src="src/android/export/VuMark.java" target-dir="src/com/seanzx/cuforia/export" />-->
         <!-- Libraries -->
         <source-file src="src/android/lib/armeabi-v7a/libVuforia.so" target-dir="libs/armeabi-v7a" />
         <source-file src="src/android/java/vuforia/Vuforia.jar" target-dir="libs" />       
